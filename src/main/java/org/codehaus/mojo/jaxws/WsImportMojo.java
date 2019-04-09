@@ -505,11 +505,6 @@ abstract class WsImportMojo
 
         // Bindings
         File[] bindings = getBindingFiles();
-        if ( bindings.length > 0 && wsdlLocation != null && wsdlLocation.contains( "*" ) )
-        {
-            throw new MojoExecutionException( "External binding file(s) can not be bound to more WSDL files ("
-                + wsdlLocation + ")\n" + "Please use either inline binding(s) or multiple execution tags." );
-        }
         for ( File binding : bindings )
         {
             args.add( "-b" );
